@@ -1,5 +1,11 @@
 /*
   State change detection (edge detection)
+
+ ***********************************************************************
+ **                                                                   **
+ **  The "Bounce" library offers a much easier way to detect changes  **
+ **                                                                   **
+ ***********************************************************************
  	
  Often, you don't need to know the state of a digital input all the time,
  but you just need to know when the input changes from one state to another.
@@ -28,6 +34,10 @@ This example code is in the public domain.
 // this constant won't change:
 const int  buttonPin = 2;    // the pin that the pushbutton is attached to
 const int ledPin = 13;       // the pin that the LED is attached to
+  // Pin 13: Arduino has an LED connected on pin 13
+  // Pin 11: Teensy 2.0 has the LED on pin 11
+  // Pin  6: Teensy++ 2.0 has the LED on pin 6
+  // Pin 13: Teensy 3.0 has the LED on pin 13
 
 // Variables will change:
 int buttonPushCounter = 0;   // counter for the number of button presses

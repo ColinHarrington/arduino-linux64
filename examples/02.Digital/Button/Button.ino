@@ -28,6 +28,10 @@
 // set pin numbers:
 const int buttonPin = 2;     // the number of the pushbutton pin
 const int ledPin =  13;      // the number of the LED pin
+  // Pin 13: Arduino has an LED connected on pin 13
+  // Pin 11: Teensy 2.0 has the LED on pin 11
+  // Pin  6: Teensy++ 2.0 has the LED on pin 6
+  // Pin 13: Teensy 3.0 has the LED on pin 13
 
 // variables will change:
 int buttonState = 0;         // variable for reading the pushbutton status

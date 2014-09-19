@@ -9,31 +9,32 @@
  * Note: on most Arduinos, there is already an LED on the board
  that's attached to pin 13, so no hardware is needed for this example.
  
+ 
  created 2005
  by David A. Mellis
  modified 8 Feb 2010
  by Paul Stoffregen
- modified 11 Nov 2013
- by Scott Fitzgerald
- 
  
  This example code is in the public domain.
+
  
  http://www.arduino.cc/en/Tutorial/BlinkWithoutDelay
  */
 
-// constants won't change. Used here to set a pin number :
+// constants won't change. Used here to set pin numbers:
+  // Pin 13: Arduino has an LED connected on pin 13
+  // Pin 11: Teensy 2.0 has the LED on pin 11
+  // Pin  6: Teensy++ 2.0 has the LED on pin 6
+  // Pin 13: Teensy 3.0 has the LED on pin 13
 const int ledPin =  13;      // the number of the LED pin
 
-// Variables will change :
+// Variables will change:
 int ledState = LOW;             // ledState used to set the LED
+long previousMillis = 0;        // will store last time LED was updated
 
-// Generally, you shuould use "unsigned long" for variables that hold time
-// The value will quickly become too large for an int to store
-unsigned long previousMillis = 0;        // will store last time LED was updated
-
-// constants won't change :
-const long interval = 1000;           // interval at which to blink (milliseconds)
+// the follow variables is a long because the time, measured in miliseconds,
+// will quickly become a bigger number than can be stored in an int.
+long interval = 1000;           // interval at which to blink (milliseconds)
 
 void setup() {
   // set the digital pin as output:
@@ -50,7 +51,7 @@ void loop()
   // blink the LED.
   unsigned long currentMillis = millis();
  
-  if(currentMillis - previousMillis >= interval) {
+  if(currentMillis - previousMillis > interval) {
     // save the last time you blinked the LED 
     previousMillis = currentMillis;   
 
